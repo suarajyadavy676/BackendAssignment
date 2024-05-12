@@ -10,18 +10,10 @@ require('dotenv').config()
 let port = process.env.PORT || 4000
 
 //for production
-const allowedOrigins = ['https://frontend-assignment-eight-mu.vercel.app/', 'http://localhost:3000/', ];
-
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+var corsOptions = {
+  origin: 'https://frontend-assignment-eight-mu.vercel.app',
+  optionsSuccessStatus: 200
+}
 app.use(cors(corsOptions));
 
 // local use
