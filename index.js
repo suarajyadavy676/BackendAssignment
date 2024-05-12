@@ -35,7 +35,7 @@ app.get('/',(req,res)=>{
 
 // all routes
 app.use('/user',userRouter)
-app.use('/products',lectureRouter)
+app.use('/lecture',lectureRouter)
 
 app.listen(port,async()=>{
   try {
